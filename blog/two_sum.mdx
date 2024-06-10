@@ -1,0 +1,33 @@
+export const metadata = {
+	title: "01 Blind code",
+	description: "Two Sum problem",
+	date: new Date("2024-06-10"),
+	author: "rama-27",
+};
+
+
+# Two Sum problem
+
+### description: 
+Given an array of integers, return indices of the two numbers such that the sum of the two numbers add up to a given **"k"(target)** value.
+
+Example:
+Given nums = [1,6,9,3,2,5]  and k=8
+
+here nums[1]+nums[4]=6+2=8 therefore return [1,4]
+
+
+Approach:
+you can solve the problem in two ways:
+1. Brute Force
+2. using Hash Map / Hash Table
+
+#### Brute Force
+- Using Brute Force we'll try every possible combination to find and return the indices
+The time complexity is O(n*n)
+
+#### Hash Map
+- Using Hash Map, We will insert every element of the array into list one by one.
+
+- If we find the target - value in the hashmap then we will return the hash[target-value] and  current "i".<br/><br/>
+*note** where i is the current pointing index in the array during the iteration
