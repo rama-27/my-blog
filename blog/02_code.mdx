@@ -1,0 +1,30 @@
+export const metadata = {
+	title: "02 Blind code",
+	description: "Relative Sort easy implementation",
+	date: new Date("2024-06-11"),
+	author: "rama-27",
+};
+
+Intuition
+---
+The goal of relative sorting is to sort an array (arr1) based on the order specified by another array (arr2).<br/>
+ If an element in arr2 appears in arr1, we want to maintain its relative order.<br/>
+  If an element in arr2 does not appear in arr1, we append it to the end of the sorted array.
+<br/>Ex:
+arr1 = [10, 5, 3, 8, 3, 9, 5, 3, 8, 2, 1]
+arr2 = [1, 3, 9, 8, 5]
+
+res=[1, 3, 3, 3, 9, 8, 8, 5, 5, 2, 10]
+
+# Approach
+We can achieve this using a hashmap (dictionary) to keep track of the counts of elements in arr1. Here are the steps:
+
+1. Create a Hashmap (count_map): Initialize an empty dictionary (count_map) with keys from arr2 and initial values set to 0.
+2. Iterate over arr1:
+If an element is in count_map, increment its value by 1.
+Otherwise, add the element to an empty list (remaining_items).
+3. Iterate over arr2:
+While the count of the element in count_map is greater than 0, append it to the result array (result) and decrement the count.
+4. Extend result with sorted remaining_items:
+Append the remaining items (elements not present in arr2) to the result array.
+Make sure to sort the remaining_items array before appending it to result.
