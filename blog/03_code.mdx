@@ -1,0 +1,40 @@
+export const metadata = {
+	title: "03 Blind code",
+	description: "Minimum increment to make array unique",
+	date: new Date("2024-06-14"),
+	author: "rama-27",
+};
+
+Minimum increment to make array unique
+---
+Intuition
+---
+
+Given an Array **nums** In one move you can pick an index i where 0< = i< len(nums) and increment nums[i] by 1.
+
+Return the minimum number of moves to make every value in the array unique.
+
+Example:1
+
+Input: nums=[1,2,2]
+Output:1
+Explanation: After 1 move the array could be [1,2,3] which has every element unique
+
+Example:2
+
+Input: nums=[3,2,1,2,1,7]
+Output: 6
+Explanation: After 6 moves the array could be [3,4,1,2,5,7].
+
+
+Hint:
+
+- First we will sort the array in ascending order.
+- now iterate over nums array
+- store previous iteration nums[i] in prev variable
+- check if current nums[i] < = prev 
+    - if the condition is true then 
+    moves+=prev+1-nums[i]
+    and nums[i]=prev+1
+
+and finally return moves 
